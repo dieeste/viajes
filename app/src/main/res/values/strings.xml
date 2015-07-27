@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GastosViajes</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="anadir">Añadir</string>
+    <string name="cuanto">¿CUÁNTO?</string>
+    <string name="concepto">CONCEPTO GASTO</string>
+    <string name="fecha">FECHA</string>
+    <string name="grupo">Nuevo Grupo</string>
+</resources>

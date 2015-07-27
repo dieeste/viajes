@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#ff419cff">
+
+    <LinearLayout
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="186dp"
+        android:orientation="horizontal"
+        android:layout_weight="1.18">
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="91dp"
+        android:layout_gravity="bottom">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/alojamiento"
+            android:src="@drawable/aloja"
+            android:background="#FF0000" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/transporte"
+            android:src="@drawable/avion"
+            android:layout_gravity="top"
+            android:background="#33FFFF"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/alojamiento"
+            android:layout_toEndOf="@+id/alojamiento"
+            android:layout_marginLeft="70dp"
+            android:layout_marginStart="70dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/comida"
+            android:src="@drawable/comida"
+            android:background="#FF33FF"
+            android:layout_marginLeft="70dp"
+            android:layout_marginStart="70dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/transporte"
+            android:layout_toEndOf="@+id/transporte" />
+    </RelativeLayout>
+
+</LinearLayout>
