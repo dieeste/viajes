@@ -66,6 +66,7 @@ public class GastosFijos extends Activity implements View.OnClickListener{
 
         if(food.moveToFirst()) {
             eat= food.getDouble(0);
+            //jejeej
         }
         VALUES = new double[] { home, transport, eat };
         NAME_LIST = new String[] { "A", "B", "C" };
