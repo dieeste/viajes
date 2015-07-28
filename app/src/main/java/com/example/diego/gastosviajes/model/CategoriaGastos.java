@@ -1,8 +1,6 @@
 package com.example.diego.gastosviajes.model;
 
-/**
- * Created by ferprial on 28/07/2015.
- */
+
 public enum CategoriaGastos {
 
     ALOJAMIENTO("ALOJAMIENTO"), TRANSPORTE("TRANSPORTE"),
