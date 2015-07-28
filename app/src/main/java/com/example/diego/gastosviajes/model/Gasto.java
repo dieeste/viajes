@@ -1,8 +1,6 @@
 package com.example.diego.gastosviajes.model;
 
-/**
- * Created by ferprial on 22/07/2015.
- */
+
 public class Gasto {
 
 
