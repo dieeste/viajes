@@ -1,4 +1,4 @@
-package com.example.diego.gastosviajes;
+package com.example.diego.gastosviajes.ui;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
@@ -11,7 +11,9 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
+
+import com.example.diego.gastosviajes.bd.QuotesDataSource;
+import com.example.diego.gastosviajes.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -20,15 +22,14 @@ import java.util.Locale;
 /**
  * Created by diego on 14/07/15.
  */
-public class NuevoGasto extends Activity implements View.OnClickListener{
+public class NuevoGastoActivity extends Activity implements View.OnClickListener{
 
     EditText cuanto;
     EditText concepto;
-    TextView fecha;
+    EditText fecha;
     QuotesDataSource controlador;
     String categoria;
     ImageButton save;
-    ImageButton calendario;
     Calendar myCalendar = Calendar.getInstance();
     String fech;
 
@@ -38,16 +39,14 @@ public class NuevoGasto extends Activity implements View.OnClickListener{
 
         setContentView(R.layout.nuevo_gasto);
 
-        setTitle("Nuevo Gasto");
         Bundle gastos = getIntent().getExtras();
         categoria = gastos.getString("categoria");
 
         cuanto = (EditText) findViewById(R.id.cantidad);
         concepto = (EditText) findViewById(R.id.concept);
-        fecha = (TextView) findViewById(R.id.date);
+        fecha = (EditText) findViewById(R.id.date);
 
         save = (ImageButton) findViewById(R.id.save);
-        calendario = (ImageButton) findViewById(R.id.calendar);
 
         save.setOnClickListener(this);
 
@@ -57,12 +56,12 @@ public class NuevoGasto extends Activity implements View.OnClickListener{
         fech=sdf.format(myCalendar.getTime());
         Log.v("hola","fecaga11 "+fech);
 
-        fecha.setText(sdf.format(myCalendar.getTime()));
+        fecha.setHint(sdf.format(myCalendar.getTime()));
 
-        calendario.setOnClickListener(new View.OnClickListener() {
+        fecha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new DatePickerDialog(NuevoGasto.this, date, myCalendar
+                new DatePickerDialog(NuevoGastoActivity.this, date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
@@ -124,10 +123,6 @@ public class NuevoGasto extends Activity implements View.OnClickListener{
             if(fech=="") {
                 fech = fecha.getText().toString();
             }
-            Log.v("hola","cuantia "+cuantia);
-            Log.v("hola","conce "+concept);
-            Log.v("hola","fecaga "+fech);
-            Log.v("hola", "catal " + categoria);
 
             controlador.insertar(concept, cuantia, fech, categoria);
             Intent backData = new Intent();
@@ -136,6 +131,9 @@ public class NuevoGasto extends Activity implements View.OnClickListener{
             setResult(RESULT_OK, backData);
 
         }
-        finish();
+        Intent intent = new Intent(NuevoGastoActivity.this,
+                GastosActivity.class);
+        startActivityForResult(intent,RESULT_OK);
+
     }
 }

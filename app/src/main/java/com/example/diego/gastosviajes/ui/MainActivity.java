@@ -1,4 +1,4 @@
-package com.example.diego.gastosviajes;
+package com.example.diego.gastosviajes.ui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,11 +8,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.diego.gastosviajes.R;
+
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
     Button entrar;
-    Button grupo;
 //    DatePicker fecha;
 
 
@@ -20,20 +21,17 @@ public class MainActivity extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setTitle(R.string.app_name);
         entrar = (Button) findViewById(R.id.entrar);
-        grupo = (Button) findViewById(R.id.grupo);
 //        fecha = (DatePicker) findViewById(R.id.calendario);
 
         entrar.setOnClickListener(this);
-        grupo.setOnClickListener(this);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -45,17 +43,17 @@ public class MainActivity extends Activity implements View.OnClickListener {
 //        int id = item.getItemId();
 //
 //        //noinspection SimplifiableIfStatement
-//        if (id == R.id.aceptar) {
+//        if (id == R.id.action_settings) {
 //            return true;
 //        }
-//
+
         return super.onOptionsItemSelected(item);
     }
 
     @Override
     public void onClick(View v) {
         if (v.getId()==R.id.entrar){
-            Intent entra = new Intent(this, GastosFijos.class);
+            Intent entra = new Intent(this, GastosFijosActivity.class);
             startActivity(entra);
         }
     }

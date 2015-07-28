@@ -11,21 +11,8 @@
         android:layout_height="wrap_content"
         android:text="Entrar"
         android:id="@+id/entrar"
-        android:background="@drawable/btn_circulo"
-        android:layout_gravity="center"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="87dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/grupo"
-        android:id="@+id/grupo"
-        android:layout_marginTop="73dp"
-        android:background="@drawable/btn_circulo"
-        android:layout_below="@+id/entrar"
-        android:layout_alignLeft="@+id/entrar"
-        android:layout_alignStart="@+id/entrar" />
+        android:layout_marginTop="163dp" />
 
 </RelativeLayout>
